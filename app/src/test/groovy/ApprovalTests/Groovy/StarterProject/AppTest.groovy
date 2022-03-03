@@ -4,6 +4,7 @@
 package ApprovalTests.Groovy.StarterProject
 
 import org.approvaltests.Approvals
+import org.approvaltests.JsonApprovals
 import org.approvaltests.combinations.CombinationApprovals
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
@@ -23,6 +24,15 @@ class AppTest extends Specification {
         Integer[] numbers = [10, 20, 30, 40, 50]
         CombinationApprovals.verifyAllCombinations({ a, b -> "${a} + ${b}" }, numbers, numbers)
     }
+    /**
+     * note: this requires GSON which is currently added in the build.gradle file.
+     * This is only required if you want to use the VerifyAsJson.
+     */
+    @Test
+    void testJson() {
+        def hero = new Person("jayne", "cobb", true, 38)
+        JsonApprovals.verifyAsJson(hero)
+    } 
     def "Approvals does not support Spock"() {
         setup:
         def app = new App()
