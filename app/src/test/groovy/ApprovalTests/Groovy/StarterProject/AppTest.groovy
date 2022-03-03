@@ -3,10 +3,22 @@
  */
 package ApprovalTests.Groovy.StarterProject
 
+import org.approvaltests.Approvals
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import spock.lang.Specification
 
 class AppTest extends Specification {
-    def "application has a greeting"() {
+    @Test
+    void testNormalJUnit() {
+        Assertions.assertEquals(5, 5)
+    }
+    @Test
+    void testWithApprovalTests() {
+        Approvals.verify("Hello World")
+    }
+    
+    def "Approvals does not support Spock"() {
         setup:
         def app = new App()
 
@@ -15,5 +27,6 @@ class AppTest extends Specification {
 
         then:
         result == "Hello Approvals!"
+//        Approvals.verify("Hello World")  // not currently supported
     }
 }
