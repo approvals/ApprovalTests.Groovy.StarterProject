@@ -17,7 +17,7 @@ class AppTest extends Specification {
     }
     @Test
     void testWithApprovalTests() {
-        Approvals.verify("Hello World2")
+        Approvals.verify("Hello World")
     }
     @Test
     void testCombinations() {
