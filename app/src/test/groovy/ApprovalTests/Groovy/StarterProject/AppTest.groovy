@@ -4,6 +4,7 @@
 package ApprovalTests.Groovy.StarterProject
 
 import org.approvaltests.Approvals
+import org.approvaltests.combinations.CombinationApprovals
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import spock.lang.Specification
@@ -17,7 +18,11 @@ class AppTest extends Specification {
     void testWithApprovalTests() {
         Approvals.verify("Hello World")
     }
-    
+    @Test
+    void testCombinations() {
+        Integer[] numbers = [10, 20, 30, 40, 50]
+        CombinationApprovals.verifyAllCombinations({ a, b -> "${a} + ${b}" }, numbers, numbers)
+    }
     def "Approvals does not support Spock"() {
         setup:
         def app = new App()
