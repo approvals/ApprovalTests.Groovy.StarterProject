@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // Use the latest Groovy version for building this library
-    implementation 'org.codehaus.groovy:groovy-all:3.0.16'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.17'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
