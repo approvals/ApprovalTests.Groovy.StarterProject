@@ -7,7 +7,7 @@ import org.approvaltests.namer.StackTraceNamer
 import org.lambda.functions.Function1
 import spock.lang.Specification
 
-class SpockNamer  {
+class SpockNamer {
 
     static def use(Specification specification) {
         new Options().forFile().withNamer(SpockNamer.createNamer(specification))
@@ -25,10 +25,18 @@ class SpockNamer  {
     private static File getSourceDir(Class<? extends Specification> clazz) {
         return ClassUtils.getSourceDirectory(clazz, new Function1<String, String>()
         {
-            public String call(String fileName)
-            {
+            public String call(String fileName) {
                 return fileName + ".groovy";
             }
         });
+    }
+
+    static createMultiNamer(Specification specification) {
+        try {
+            specification.getSpecificationContext().getCurrentSpec()
+            createNamer(specification)
+        } catch (IllegalStateException e) {
+            new StackTraceNamer()
+        }
     }
 }

@@ -3,12 +3,10 @@ package ApprovalTests.Groovy.StarterProject
 import org.approvaltests.Approvals
 import org.approvaltests.JsonApprovals
 import org.approvaltests.combinations.CombinationApprovals
-import org.approvaltests.core.Options
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import spock.lang.Specification
 
-class AppTest extends Specification {
+class AppTest extends ApprovalSpecification {
 
     @Test
     void testNormalJUnit() {
@@ -46,6 +44,7 @@ class AppTest extends Specification {
         then:
         result == "Hello Approvals!"
 //        Approvals.verify("Hello World", new Options().forFile().withNamer(SpockNamer.createNamer(this)))
-        Approvals.verify("Hello World", SpockNamer.use(this))
+//        Approvals.verify("Hello World", SpockNamer.use(this))
+        Approvals.verify("Hello World")
     }
 }
