@@ -33,18 +33,15 @@ class AppTest extends ApprovalSpecification {
         JsonApprovals.verifyAsJson(hero)
     }
 
-    def Approvalsdoesnotsupportspock() {
+    def ApprovalWithSpock() {
+        // notice we are using ApprovalsSpecification instead of Specification
         setup:
-
         def app = new App()
 
         when:
         def result = app.greeting
 
         then:
-        result == "Hello Approvals!"
-//        Approvals.verify("Hello World", new Options().forFile().withNamer(SpockNamer.createNamer(this)))
-//        Approvals.verify("Hello World", SpockNamer.use(this))
-        Approvals.verify("Hello World")
+        Approvals.verify(result)
     }
 }
