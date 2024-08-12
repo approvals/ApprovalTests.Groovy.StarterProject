@@ -17,7 +17,7 @@ dependencies {
     // Use the awesome Spock testing and specification framework even with Java
     testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
-    testImplementation("com.approvaltests:approvaltests:24.3.0")
+    testImplementation("com.approvaltests:approvaltests:24.4.0")
     testImplementation("com.google.code.gson:gson:2.11.0")
 }
 
