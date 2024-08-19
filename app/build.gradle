@@ -12,7 +12,7 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.22'
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:33.2.1-jre'
+    implementation 'com.google.guava:guava:33.3.0-jre'
 
     // Use the awesome Spock testing and specification framework even with Java
     testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
