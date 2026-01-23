@@ -15,7 +15,7 @@ dependencies {
     implementation 'com.google.guava:guava:33.5.0-jre'
 
     // Use the awesome Spock testing and specification framework even with Java
-    testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
+    testImplementation 'org.spockframework:spock-core:2.4-groovy-3.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:6.0.2'
     testImplementation("com.approvaltests:approvaltests:25.4.3")
     testImplementation("com.google.code.gson:gson:2.13.2")
